@@ -1,0 +1,98 @@
+.input {
+  border-radius: 5px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) -86.67%,
+    rgba(255, 255, 255, 0.1) 205.56%
+  );
+  backdrop-filter: blur(20px);
+}
+.text-gradient {
+  background: var(--G1, linear-gradient(94deg, #5307c7 0%, #c902dd 102.66%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.btn-round {
+  color: white;
+  width: 150px;
+  height: 56px;
+  flex-shrink: 0;
+  border-radius: 30px;
+  background: var(--G1, linear-gradient(94deg, #5307c7 0%, #c902dd 102.66%));
+}
+.btn-round-border {
+  width: 150px;
+  height: 56px;
+  flex-shrink: 0;
+  border-radius: 30px;
+  border: 1px solid var(--G1, #5307c7);
+}
+.btn-round-border:hover {
+  background: var(--G1, linear-gradient(94deg, #ffffff 0%, #ffffff 102.66%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.card-bg {
+  border-radius: 6px;
+  border: 1px solid rgba(83, 7, 199, 0.1);
+  background: linear-gradient(
+    101deg,
+    rgba(255, 255, 255, 0) -24.44%,
+    rgba(255, 255, 255, 0.1) 130.98%
+  );
+  backdrop-filter: blur(20px);
+}
+.heart {
+  border-radius: 8px;
+  background: var(--G1, linear-gradient(94deg, #5307c7 0%, #c902dd 102.66%));
+}
+.card-btn {
+  display: inline-flex;
+  padding: 16px 36px;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  border-radius: 5px;
+  background: var(--G1, linear-gradient(94deg, #5307c7 0%, #c902dd 102.66%));
+}
+
+.card {
+  border-radius: 6px;
+  border: 1px solid rgba(105, 84, 144, 0.3);
+  backdrop-filter: blur(70px);
+}
+.card:hover {
+  background: linear-gradient(
+    136deg,
+    rgba(255, 255, 255, 0) -28.92%,
+    rgba(255, 255, 255, 0.1) 133.61%
+  );
+  backdrop-filter: blur(20px);
+}
+
+.trending {
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(120px);
+}
+.categories {
+  border-radius: 6px;
+  background: linear-gradient(
+    136deg,
+    rgba(255, 255, 255, 0) -28.92%,
+    rgba(255, 255, 255, 0.1) 133.61%
+  );
+  backdrop-filter: blur(20px);
+}
+
+.tab {
+  border-radius: 100px;
+  background: linear-gradient(
+    101deg,
+    rgba(255, 255, 255, 0) -17.47%,
+    rgba(255, 255, 255, 0.1) 128.96%
+  );
+  backdrop-filter: blur(20px);
+}
