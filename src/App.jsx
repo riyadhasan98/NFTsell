@@ -21,7 +21,7 @@ function App() {
       <Categories />
       <Popular />
       <TopSeller />
-      <Foter/>
+      <Foter />
     </>
   )
 }

@@ -1,10 +1,46 @@
-import React from 'react'
-import rbg from '../images/rbg.png'
-import main from '../images/cartoon.png'
-import heart from '../icons/heart.svg'
-import arrow from '../icons/arrow.svg'
+import React, { useState, useEffect } from "react";
+import rbg from "../images/rbg.png";
+import main from "../images/cartoon.png";
+import heart from "../icons/heart.svg";
+import arrow from "../icons/arrow.svg";
 
 function Header() {
+   const initialTime = 2 * 24 * 3600 + 12 * 3600 + 45 * 60 + 50;
+
+   const [timeLeft, setTimeLeft] = useState(initialTime);
+   const [days, setDays] = useState(0);
+   const [hours, setHours] = useState(0);
+   const [minutes, setMinutes] = useState(0);
+   const [seconds, setSeconds] = useState(0);
+
+   useEffect(() => {
+     
+     const updateCountdown = (time) => {
+       setDays(Math.floor(time / (24 * 3600)));
+       setHours(Math.floor((time % (24 * 3600)) / 3600));
+       setMinutes(Math.floor((time % 3600) / 60));
+       setSeconds(time % 60);
+     };
+
+     
+     updateCountdown(timeLeft);
+
+     const timerId = setInterval(() => {
+       setTimeLeft((prevTime) => {
+         if (prevTime <= 1) {
+           clearInterval(timerId);
+           return 0;
+         }
+         const newTime = prevTime - 1;
+         updateCountdown(newTime);
+         return newTime;
+       });
+     }, 1000);
+
+     return () => clearInterval(timerId);
+   }, [timeLeft]);
+
+
   return (
     <>
       <div className="bg-[#644B88] opacity-40 h-[1px]">
@@ -13,6 +49,7 @@ function Header() {
       <section className="mt-8 md:mt-12 lg:mt-20">
         <div className="cus-container">
           <div>
+            
             <div className="lg:flex justify-between">
               <div className="left space-y-3 lg:mt-20 relative z-10 ">
                 <p className="text-gradient text-[20px] font-bold font-urbanist text-center lg:text-left">
@@ -98,25 +135,25 @@ function Header() {
                       <div className="flex space-x-8 mt-2">
                         <div>
                           <p className="text-[18px] font-urbanist font-bold text-white">
-                            09
+                            {days}
                           </p>
                           <p className="para-text text-[14px]">Days</p>
                         </div>
                         <div>
                           <p className="text-[18px] font-urbanist font-bold text-white">
-                            22
+                            {hours}
                           </p>
                           <p className="para-text text-[14px]">Hours</p>
                         </div>
                         <div>
                           <p className="text-[18px] font-urbanist font-bold text-white">
-                            56
+                            {minutes}
                           </p>
                           <p className="para-text text-[14px]">minutes</p>
                         </div>
                         <div>
                           <p className="text-[18px] font-urbanist font-bold text-white">
-                            36
+                            {seconds}
                           </p>
                           <p className="para-text text-[14px]">Seconds</p>
                         </div>
@@ -142,4 +179,4 @@ function Header() {
   );
 }
 
-export default Header
+export default Header;
